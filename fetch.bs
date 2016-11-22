@@ -613,7 +613,7 @@ user-agent-defined <a for=header>value</a> for the
  <li><p>A <dfn export for=body id=concept-body-total-bytes>total bytes</dfn> (an
  integer), initially 0.
 
- <li><p>A <dfn export for=body id=concept-body-repeatable>replayable flag</dfn> (a boolean),
+ <li><p>A <dfn export for=body id=concept-body-replayable>replayable flag</dfn> (a boolean),
  initially false.
 </ul>
 
@@ -3396,6 +3396,11 @@ steps:
   <ol>
    <li class=XXX><p>Needs testing: multiple `<code>WWW-Authenticate</code>` headers, missing,
    parsing issues.
+
+   <li><p>If <replayable
+   <li><var>request</var>'s <a for=request>body</a> is not null and <var>request</var>'s
+   <a for=request>body</a>'s <a for=body>replayable flag</a> is false, then return a
+   <a>network error</a>.
 
    <li>
     <p>If <var>request</var>'s
